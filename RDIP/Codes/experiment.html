@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="projcss.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body style="background: #87ceeb;">
+<script src="proj.js"></script>
+<form>
+<div class=bck>
+<img src="http://cl-iiith.vlabs.ac.in/images/logo.jpg" width="1000px">
+<h3 style="color: blue;">COMPUTATIONAL LINGUISTICS LAB</h3>
+<h3 style="color: black;">Home > Computational Linguistics Lab > Forming Sentences - 2</h3>
+<div class="back">
+<p style="font-size: 50px;font-family:serif;"><b>Forming Sentences - 2</b></p>
+<div class="back2">
+<div class="row">
+<div class="col-md-2">
+<a href="project.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/introduction.jpg"><br><br><b><u>INTRODUCTION</u></b></a>
+
+</div>
+<div class="col-md-2">
+
+<a href="project.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/theory.jpg"><br><br><b><u>THEORY</u></b></a>
+
+</div>
+<div class="col-md-2">
+
+<a href="project.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/objective.jpg"><br><br><b><u>OBJECTIVE</u></b></a>
+
+</div>
+<div class="col-md-2">
+
+   <a href="experiment.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/simulation.jpg"><br><br><b><u>EXPERIMENT</u></b></a>
+</div>
+<div class="col-md-2">
+
+   <a href="project.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/quizzes.jpg"><br><br><b><u>QUIZZES</u></b></a>
+</div>
+<div class="col-md-2">
+
+   <a href="project.html" style="color: black;"><img src="http://cl-iiith.vlabs.ac.in/images/procedure.jpg"><br><br><b><u>PROCEDURE</u></b></a>
+</div>
+</div>
+<br><br>
+<b style="font-size: 40px;">Experiment</b><br><br>
+<center><select id="ar" onchange="array()">
+<option value="selected">---select a language---</option>
+<option value="English" >English</option>
+<option value="Hindi" >Hindi</option>
+</select><br><br>
+<b><p style="color:blue;" id="r"></p></b><br>
+<p style="color:blue;" id='s'></p><br>
+<input type="hidden" id="start_function_count" value="0">
+<input type="hidden" id="selected_sentence" value="0">
+<span id="0" onclick="sec(this.id)"></span>
+<span id="1" onclick="sec(this.id)"></span>
+<span id="2" onclick="sec(this.id)"></span>
+<span id="3" onclick="sec(this.id)" ></span>
+<span id="4" onclick="sec(this.id)"></span>
+<span id="5"onclick="sec(this.id)"></span>
+<span id="6"onclick="sec(this.id)"></span>
+<span id="7"onclick="sec(this.id)"></span>
+<span id="8"onclick="sec(this.id)"></span>
+<span id="9"onclick="sec(this.id)"></span>
+<span id="0h" onclick="hin(this.id)"></span>
+<span id="1h" onclick="hin(this.id)"></span>
+<span id="2h" onclick="hin(this.id)"></span>
+<span id="3h" onclick="hin(this.id)" ></span>
+<span id="4h" onclick="hin(this.id)"></span>
+<span id="5h"onclick="hin(this.id)"></span>
+<span id="6h"onclick="hin(this.id)"></span>
+<span id="7h"onclick="hin(this.id)"></span>
+<span id="8h"onclick="hin(this.id)"></span>
+<span id="9h"onclick="hin(this.id)"></span>
+<span id="foo">&nbsp;</span>
+<span id="fooBar">&nbsp;</span>
+<p style="color:blue;"><b id="b"></b><i id="i"></i></p>
+<h2 id="h2id"></h2>
+<h2 id="h2h"></h2>
+<span id="reform" ></span><br>
+<span id="ref"></span><br><br>
+<span id="c" onclick="check_correctness();"></span><br>
+<span id="d" onclick="hin_correctness();"></span><br>
+<span  id="right" style="font-size: 30px;" ></span>
+<span id="get_correct"></span>
+<span id="answers"></span>
+</center>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>
