@@ -9,6 +9,8 @@ if(strUser=="---select a language---")
   alert("select language");
 }
 if(strUser=="English"){
+  document.getElementById("r").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
+  document.getElementById("s").innerHTML="(select the buttons in proper order)";
   array1=[["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
 ["some students like to study in the night","at night some students like to study"],
 ["John and Mary went to church","Mary and John went to church"],
@@ -21,6 +23,8 @@ if(strUser=="English"){
 ["I told her that I bought a book yesterday","I told her yesterday that I bought a book","yesterday I told her that I bought a book","I bought a book that I told her yesterday","I bought a book yesterday that I told her","yesterday I bought a book that I told her"]];
 }
 else if(strUser=="Hindi"){
+  document.getElementById("r").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
+  document.getElementById("s").innerHTML="(select the buttons in proper order)";
   array2=[["राम और श्याम बाजार गयें","राम और श्याम गयें बाजार","बाजार गयें राम और श्याम","गयें बाजार राम और श्याम"],
 ["राम सोया और श्याम भी","श्याम सोया और राम भी","सोया श्याम और राम भी","सोया राम और श्याम भी"],
 ["मैंने उसे बताया कि राम सो रहा है","मैंने उसे बताया कि सो रहा है राम","उसे मैंने बताया कि राम सो रहा है","उसे मैंने बताया कि सो रहा है राम","मैंने बताया उसे कि राम सो रहा है","मैंने बताया उसे कि सो रहा है राम","उसे बताया मैंने कि राम सो रहा है","उसे बताया मैंने कि सो रहा है राम","बताया मैंने उसे कि राम सो रहा है","बताया मैंने उसे कि सो रहा है राम","बताया उसे मैंने कि राम सो रहा है","बताया उसे मैंने कि सो रहा है राम"],
