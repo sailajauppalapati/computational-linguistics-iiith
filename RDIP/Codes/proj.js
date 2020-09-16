@@ -36,12 +36,7 @@ function array()
     index=Math.floor(Math.random()*final.length);
     sentence=final[index][0];
     words=sentence.split(" ");
-    reform(words);
-}
-function reform(words)
-  {
-    divis=document.getElementById("but");
-    divis.innerHTML="";
+
     for(i=0;i<words.length;i++)
     {
         ind=Math.floor(Math.random()*words.length);
@@ -49,11 +44,16 @@ function reform(words)
         words[ind]=words[i];
         words[i]=temp;
     }
+    reform(words);
+  }
+    function reform(words)
+    {
+    divis=document.getElementById("but");
+    two_buttons=document.getElementById("reformation");
     arr=[];
     sentence="";
-    two_buttons=document.getElementById("reformation");
     two_buttons.innerHTML="";
-
+    document.getElementById("reformtext").innerHTML="";
     reform_button=document.createElement("input");
     reform_button.type="button";
     reform_button.value="Reform the sentence";
@@ -74,6 +74,7 @@ function reform(words)
           {
               reform(words);
           };
+          document.getElementById("reformtext").innerHTML="<b>Formed Sentence</b>(after selecting words)";
       };
         divis.appendChild(arr[i]);
     }
