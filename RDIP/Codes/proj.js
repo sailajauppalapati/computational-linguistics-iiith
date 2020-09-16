@@ -59,6 +59,11 @@ function array()
     divis=document.getElementById("but");
     two_buttons=document.getElementById("reformation");
     correctness=document.getElementById("correctness");
+    answ="";
+    for(i=0;i<final[index].length;i++)
+    {
+      answ+=final[index][i]+"<br>";
+    }
     arr=[];
     sentence="";
     divis.innerHTML="";
@@ -73,6 +78,9 @@ function array()
     check_but.type="button";
     check_but.value="Check correctness of the sentence";
     check_but.style.margin="3px 6px";
+    correct=document.createElement("input");
+    correct.type="button";
+    correct.value="Get Correct Sentence"
     document.getElementById("refom").innerHTML=sentence;
     for(i=0;i<words.length;i++)
     {
@@ -103,9 +111,6 @@ function array()
                 message=document.createElement("crct");
                 message.innerHTML="<br>Wrong answer!!!<br><br>";
                 correctness.appendChild(message);
-                correct=document.createElement("input");
-                correct.type="button";
-                correct.value="Get Correct Sentence";
                 correctness.appendChild(correct);
               }
             };
@@ -114,4 +119,17 @@ function array()
       };
         divis.appendChild(arr[i]);
     }
-  }
+    correct.onclick=function(){
+      if(correct.value=="Get Correct Sentence" || correct.value=="Get Answers"){
+          answer=document.createElement("correct");
+          answer.innerHTML=answ;
+          correctness.appendChild(answer);
+          correct.style.display="block";
+          correct.value="Hide The correct sentence";
+      }
+      else{
+          answer.innerHTML="";
+          correct.value="Get Answers";
+      }
+  };
+}
