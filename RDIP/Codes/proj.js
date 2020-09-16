@@ -19,16 +19,36 @@ var array2=[["राम और श्याम बाजार गयें","�
             ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]
         ];
 function array(){
+    division=document.getElementById("but");
+    division.innerHTML="";
     var strUser=document.getElementById("ar").value=="English";
     if(strUser)
     {
       document.getElementById("r").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
       document.getElementById("s").innerHTML="(select the buttons in proper order)";
+      final=array1;
     }
     else
     {
       document.getElementById("r").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
       document.getElementById("s").innerHTML="(select the buttons in proper order)";
+      final=array2;
     }
-    
+    index=Math.floor(Math.random()*final.length);
+    sentence=final[index][0];
+    words=sentence.split(" ");
+    for(i=0;i<words.length;i++){
+        ind=Math.floor(Math.random()*words.length);
+        temp=words[ind];
+        words[ind]=words[i];
+        words[i]=temp;
+    }
+    arr=[]
+    for(i=0;i<words.length;i++){
+        arr[i]=document.createElement("input");
+        arr[i].type="button";
+        arr[i].style.margin="3px 6px";
+        arr[i].value=words[i];
+        division.appendChild(arr[i]);
+    }
 } 
