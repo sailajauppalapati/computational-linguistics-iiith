@@ -18,9 +18,8 @@ var array2=[["राम और श्याम बाजार गयें","�
             ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
             ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]
         ];
-function array(){
-    division=document.getElementById("but");
-    division.innerHTML="";
+function array()
+{
     var strUser=document.getElementById("ar").value=="English";
     if(strUser)
     {
@@ -37,18 +36,45 @@ function array(){
     index=Math.floor(Math.random()*final.length);
     sentence=final[index][0];
     words=sentence.split(" ");
-    for(i=0;i<words.length;i++){
+    reform(words);
+}
+function reform(words)
+  {
+    divis=document.getElementById("but");
+    divis.innerHTML="";
+    for(i=0;i<words.length;i++)
+    {
         ind=Math.floor(Math.random()*words.length);
         temp=words[ind];
         words[ind]=words[i];
         words[i]=temp;
     }
-    arr=[]
-    for(i=0;i<words.length;i++){
+    arr=[];
+    sentence="";
+    two_buttons=document.getElementById("reformation");
+    two_buttons.innerHTML="";
+
+    reform_button=document.createElement("input");
+    reform_button.type="button";
+    reform_button.value="Reform the sentence";
+    document.getElementById("refom").innerHTML=sentence;
+    for(i=0;i<words.length;i++)
+    {
         arr[i]=document.createElement("input");
         arr[i].type="button";
         arr[i].style.margin="3px 6px";
         arr[i].value=words[i];
-        division.appendChild(arr[i]);
+        arr[i].onclick=function()
+        {
+          sentence+=this.value+" ";
+          document.getElementById("refom").innerHTML=sentence;
+          this.style.display="none";
+          two_buttons.appendChild(reform_button);
+          reform_button.onclick=function()
+          {
+              reform(words);
+          };
+      };
+        divis.appendChild(arr[i]);
     }
-} 
+  }
