@@ -44,15 +44,26 @@ function array()
         words[ind]=words[i];
         words[i]=temp;
     }
-    reform(words);
+    reform(words,index,final);
   }
-    function reform(words)
+  function checksent(sentence,index,final){
+    for(i=0;i<final[index].length;i++){
+        if(sentence==final[index][i]){
+            return true;
+        }
+    }
+    return false;
+}
+    function reform(words,index,final)
     {
     divis=document.getElementById("but");
     two_buttons=document.getElementById("reformation");
+    correctness=document.getElementById("correctness");
     arr=[];
     sentence="";
+    divis.innerHTML="";
     two_buttons.innerHTML="";
+    correctness.innerHTML="";
     document.getElementById("reformtext").innerHTML="";
     reform_but=document.createElement("input");
     reform_but.type="button";
@@ -77,10 +88,27 @@ function array()
           two_buttons.appendChild(reform_but);
           reform_but.onclick=function()
           {
-              reform(words);
+              reform(words,index,final);
           };
           if(sentence.split(" ").length==words.length+1){
           two_buttons.appendChild(check_but);
+          check_but.onclick=function(){
+            if(checksent(sentence.trim(),index,final)){
+                message=document.createElement("crct");
+                message.innerHTML="<br>Right answer!!!<br><br>";
+                correctness.appendChild(message);
+            }
+            else
+              {
+                message=document.createElement("crct");
+                message.innerHTML="<br>Wrong answer!!!<br><br>";
+                correctness.appendChild(message);
+                correct=document.createElement("input");
+                correct.type="button";
+                correct.value="Get Correct Sentence";
+                correctness.appendChild(correct);
+              }
+            };
           }
           document.getElementById("reformtext").innerHTML="<b>Formed Sentence</b>(after selecting words)";
       };
